@@ -1,0 +1,603 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Your custom fonts here */
+/* Example
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../fonts/Custom-Font.eot');
+    src: url('../fonts/Custom-Font.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Custom-Font.woff') format('woff'),
+         url('../fonts/Custom-Font.svg#custom_font') format('svg');
+    font-weight: 400;       // For normal width. It could has another value   
+    font-style: normal;     // Also could has another value
+    }
+
+
+// Var for using custom font
+$CustomFont: 'CustomFont', Helvetica, Arial, sans-serif;
+*/
+@font-face {
+  font-family: Thin;
+  src: local("Thin"), url(../fonts/SF-UI-Display-Thin.ttf);
+}
+
+@font-face {
+  font-family: Bold;
+  src: local("Bold"), url(../fonts/SF-UI-Display-Bold.ttf);
+}
+
+@font-face {
+  font-family: SF-Black;
+  src: local("SF-Black"), url(../fonts/SF-UI-Display-Black.ttf);
+}
+
+@font-face {
+  font-family: SF-Regular;
+  src: local("Regular"), url(../fonts/SF-UI-Display-Regular.ttf);
+}
+
+.container {
+  width: 990px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1299px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 766px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.hideme {
+  opacity: 0;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+body {
+  font-family: SF-Regular, sans-serif;
+}
+
+/*
+  ====================================================================
+  Header
+  ====================================================================
+*/
+.loader {
+  min-height: 750px;
+  background-color: black;
+}
+
+.loader__btn {
+  margin: 0 auto;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 75%;
+  opacity: 0;
+}
+
+.loader__btn .btn {
+  background: #01e2ff;
+  display: block;
+  width: 33px;
+  height: 33px;
+  margin: 0 auto;
+  outline: 0;
+  border-radius: 100%;
+  border: 3px solid #01e2ff;
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+}
+
+.loader__btn .btn:hover {
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.loader__btn .btn:hover:before {
+  opacity: 0;
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+}
+
+.loader__btn .btn:before {
+  content: '';
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  background-color: transparent;
+  border: 2px solid #01e2ff;
+  border-radius: 100%;
+  opacity: 0.2;
+  z-index: 4;
+  margin: -12px 0 0 -12px;
+}
+
+.loader__btn .btn:before:hover {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.loader__btn .icon {
+  display: inline-block;
+  width: 4em;
+  height: 1em;
+  margin: 12px 10px;
+  background: no-repeat;
+  background-image: url(../img/content/svg/arrow_drpdown.svg), none;
+  /* Modern browsers */
+  background-size: auto 100%;
+  vertical-align: middle;
+  font-size: 8px;
+}
+
+.garkushyn {
+  margin: 0 auto;
+  width: 100%;
+  position: absolute;
+  top: 35%;
+  text-align: center;
+}
+
+.garkushyn span {
+  font-size: 90px;
+  color: #01e2ff;
+  font-family: Bold, sans-serif;
+  position: relative;
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+  opacity: 0;
+}
+
+@media only screen and (max-width: 650px) {
+  .garkushyn span {
+    font-size: 40px;
+  }
+}
+
+/*
+  ====================================================================
+  Main
+  ====================================================================
+*/
+.team {
+  padding-top: 50px;
+  height: 900px;
+  background: #01e2ff;
+}
+
+.team__item {
+  float: left;
+  width: 33.33%;
+  height: 350px;
+  text-align: center;
+  position: relative;
+}
+
+.team__item img {
+  width: 150px;
+}
+
+.team .padding {
+  padding-top: 70px;
+}
+
+.team a {
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.team__html5 li {
+  padding: 10px 0;
+}
+
+.team__html5 a {
+  color: #E44D26;
+}
+
+.team__js li {
+  padding: 10px 0;
+}
+
+.team__js a {
+  color: #fde53e;
+}
+
+.team__css3 li {
+  padding: 10px 0;
+}
+
+.team__css3 a {
+  color: #2162AF;
+}
+
+.team h2 {
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  padding: 20px 0 70px 0;
+}
+
+.team__help {
+  float: left;
+  width: 25%;
+  height: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.team__help img {
+  height: 100px;
+}
+
+.team .tars {
+  height: 76px;
+}
+
+@media only screen and (max-width: 500px) {
+  .team {
+    height: 750px;
+  }
+  .team__item {
+    height: 250px;
+  }
+  .team h2 {
+    font-size: 30px;
+    padding: 0 0 50px 0;
+  }
+  .team img {
+    width: 100px;
+  }
+  .team a {
+    font-size: 20px;
+  }
+  .team__help {
+    width: 50%;
+    height: 150px;
+    text-align: center;
+    position: relative;
+  }
+  .team .storm {
+    width: 180px;
+  }
+  .team .tars {
+    width: 85px;
+  }
+}
+
+.portfolio {
+  background: black;
+}
+
+.portfolio__above {
+  overflow: hidden;
+}
+
+.portfolio__item {
+  width: 33.33%;
+  float: left;
+}
+
+.portfolio__title {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  position: absolute;
+  z-index: 2;
+}
+
+.portfolio h2 {
+  color: transparent;
+  font-size: 20px;
+  position: absolute;
+  left: 40px;
+  top: 30px;
+  -webkit-transform: scale(1.8);
+          transform: scale(1.8);
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+}
+
+.portfolio span {
+  padding-bottom: 3px;
+  position: relative;
+  top: 10px;
+}
+
+.portfolio a:hover h2 {
+  color: white;
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.portfolio a:hover span {
+  border-bottom: 3px solid #01e2ff;
+}
+
+.portfolio img {
+  width: 100%;
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.portfolio img:hover {
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+  opacity: 0.3;
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.portfolio video {
+  width: 100%;
+  height: 90%;
+  margin-bottom: -6px;
+  z-index: 3;
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.portfolio video h2 {
+  color: transparent;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+}
+
+.portfolio video:hover {
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+  opacity: 0.3;
+}
+
+.portfolio .ciklum {
+  margin-top: -3px;
+}
+
+.portfolio__below {
+  margin-top: -3px;
+}
+
+.portfolio__below .one {
+  float: left;
+  width: 33.3%;
+}
+
+.portfolio__below .two {
+  float: left;
+  width: 66.7%;
+}
+
+.portfolio .row__top {
+  overflow: hidden;
+}
+
+.portfolio .row__bottom {
+  overflow: hidden;
+  margin-top: -2px;
+}
+
+.portfolio .giga {
+  margin-top: -16%;
+}
+
+@media only screen and (max-width: 500px) {
+  .portfolio img {
+    margin-top: -5px;
+  }
+  .portfolio .portfolio__item {
+    width: 100%;
+    float: none;
+    margin-top: -5px;
+  }
+  .portfolio .portfolio img {
+    margin-top: -5px;
+  }
+  .portfolio .portfolio__below {
+    margin-top: -3px;
+  }
+  .portfolio .portfolio__below .one {
+    width: 100%;
+    float: none;
+  }
+  .portfolio .portfolio__below .two {
+    width: 100%;
+    float: none;
+  }
+  .portfolio .portfolio .giga {
+    margin-top: 0;
+  }
+}
+
+.partners {
+  min-height: 350px;
+  background: #01e2ff;
+  margin-top: -3px;
+}
+
+.partners__item {
+  float: left;
+  width: 33.33%;
+  height: 150px;
+  text-align: center;
+  position: relative;
+}
+
+.partners__item img {
+  width: 150px;
+}
+
+.partners h2 {
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  padding: 50px 0;
+}
+
+.partners .vintage {
+  padding-top: 50px;
+}
+
+@media only screen and (max-width: 500px) {
+  .partners {
+    min-height: 450px;
+  }
+  .partners__item {
+    float: none;
+    width: 100%;
+  }
+  .partners__item:last-child {
+    padding-bottom: 50px;
+  }
+  .partners .vintage {
+    padding-top: 100px;
+  }
+}
+
+/*
+  ====================================================================
+  Footer
+  ====================================================================
+*/
+.main-footer {
+  min-height: 150px;
+  background: black;
+  padding-top: 50px;
+}
+
+.main-footer__item {
+  float: left;
+  width: 33%;
+}
+
+.main-footer__download {
+  color: white;
+  font-size: 20px;
+  font-family: Bold, sans-serif;
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+}
+
+.main-footer__download:hover {
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+  text-decoration: none;
+  color: #01e2ff;
+}
+
+.main-footer__h3 {
+  color: #01e2ff;
+  font-family: Bold, sans-serif;
+  padding: 20px 0;
+  font-size: 20px;
+  width: 150px;
+  margin: 0 auto;
+}
+
+.main-footer__h4 {
+  color: white;
+  padding-bottom: 10px;
+  width: 150px;
+  margin: 0 auto;
+}
+
+.main-footer img {
+  margin: 0 auto;
+  height: 30px;
+  padding: 20px 0 0 60px;
+}
+
+@media only screen and (max-width: 650px) {
+  .main-footer {
+    min-height: 170px;
+    text-align: center;
+  }
+  .main-footer__item {
+    float: none;
+    width: 100%;
+  }
+  .main-footer__download {
+    color: white;
+    padding: 20px 0 0 0px;
+  }
+  .main-footer img {
+    margin: 0 auto;
+    height: 30px;
+    padding: 20px 0 0 0px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
